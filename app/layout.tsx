@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "WAYFINDX+ — Cari Jalannya",
+  title: "WAYFINDX+ — JOKI FRIENDLY",
   description:
     "Creative service studio untuk bantu kamu menyelesaikan apa pun yang sedang dikerjakan.",
   generator: "v0.app",

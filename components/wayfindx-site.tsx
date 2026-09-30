@@ -173,10 +173,12 @@ function Statement() {
 function Portfolio() {
   const [filter, setFilter] =
     useState<(typeof portfolioCategories)[number]>("SEMUA");
+
   const items =
     filter === "SEMUA"
       ? portfolio
       : portfolio.filter((item) => item.category === filter);
+
   return (
     <section id="karya" className="mx-auto max-w-7xl px-5 py-24 lg:px-10">
       <div className="mb-12 flex flex-col justify-between gap-7 md:flex-row md:items-end">
@@ -184,29 +186,37 @@ function Portfolio() {
           <p className="mb-4 text-xs font-bold tracking-[.25em] text-coral">
             01 / SELECTED WORKS
           </p>
+
           <h2 className="font-serif text-6xl font-bold tracking-[-.07em]">
             KEPOIN KARYA
             <br />
             <em className="font-normal">KITA DULU!</em>
           </h2>
         </div>
+
         <p className="max-w-xs text-sm leading-6 text-ink/60">
           Beberapa hal yang pernah kami bantu kerjakan. Klik untuk lihat
           detailnya.
         </p>
       </div>
+
       <div className="mb-9 flex flex-wrap gap-2">
         {portfolioCategories.map((category) => (
           <button
             key={category}
             onClick={() => setFilter(category)}
-            className={`border px-4 py-2 text-[10px] font-bold tracking-[.18em] transition ${filter === category ? "border-coral bg-coral text-cream" : "border-ink/20 hover:border-coral"}`}
+            className={`border px-4 py-2 text-[10px] font-bold tracking-[.18em] transition ${
+              filter === category
+                ? "border-coral bg-coral text-cream"
+                : "border-ink/20 hover:border-coral"
+            }`}
           >
             {category}
           </button>
         ))}
       </div>
-      <motion.div layout className="grid gap-5 md:grid-cols-12">
+
+      <motion.div layout className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <AnimatePresence mode="popLayout">
           {items.map((item, i) => (
             <motion.a
@@ -219,31 +229,39 @@ function Portfolio() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ delay: i * 0.05 }}
-              className={`group relative overflow-hidden border border-ink/15 bg-beige ${i === 0 ? "md:col-span-7 md:row-span-2" : "md:col-span-5"}`}
+              className="group relative overflow-hidden border border-ink/15 bg-beige"
             >
-              <div
-                className={`relative ${i === 0 ? "aspect-[1.05]" : "aspect-[1.6]"}`}
-              >
+              <div className="relative aspect-[1.6]">
                 <Image
                   src={item.thumbnail}
                   alt={item.title}
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
                 />
+
                 <div className="absolute inset-0 bg-maroon/0 transition group-hover:bg-maroon/60" />
+
                 <div className="absolute inset-x-5 bottom-5 translate-y-3 text-cream opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   <p className="text-[10px] font-bold tracking-[.2em] text-coral">
                     {item.category} · {item.platform}
                   </p>
-                  <h3 className="mt-1 font-serif text-3xl">{item.title}</h3>
+
+                  <h3 className="mt-1 font-serif text-3xl">
+                    {item.title}
+                  </h3>
+
                   <span className="mt-3 inline-flex items-center gap-2 text-[10px] font-bold tracking-widest">
-                    {item.detailUrl ? "LIHAT KARYA" : "DETAIL SEGERA"}{" "}
+                    {item.detailUrl ? "LIHAT KARYA" : "DETAIL SEGERA"}
                     {item.detailUrl && <ArrowUpRight size={13} />}
                   </span>
                 </div>
               </div>
+
               <div className="flex items-center justify-between px-4 py-3">
-                <span className="font-serif text-lg">{item.title}</span>
+                <span className="font-serif text-lg">
+                  {item.title}
+                </span>
+
                 <span className="text-[10px] font-bold tracking-widest text-ink/45">
                   {item.year}
                 </span>
@@ -539,7 +557,7 @@ export function WayfindxSite() {
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 md:flex-row md:items-center">
           <Logo />
           <p className="text-xs text-cream/45">
-            © 2026 WAYFINDX+. Dibikin dengan niat.
+            © 2026 WAYFINDX+. JASA JOKI ALA GEN Z.
           </p>
           <a
             href={createWhatsappLink("Halo MinWayy! Mau tanya-tanya dulu boleh?")}
