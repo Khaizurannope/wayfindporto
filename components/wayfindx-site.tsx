@@ -18,6 +18,7 @@ import {
   portfolioCategories,
   priceGroups,
   services,
+  testimonials,
 } from "@/data/portfolio";
 
 const reveal = {
@@ -64,6 +65,7 @@ function Navbar() {
           <a href="#layanan">LAYANAN</a>
           <a href="#harga">PRICELIST</a>
           <a href="#pesan">CARA PESAN</a>
+          <a href="#testimonial">TESTIMONIAL</a>
         </nav>
         <div className="hidden lg:block">
           <Button href="#pesan" dark>
@@ -104,7 +106,7 @@ function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 lg:grid-cols-[1.05fr_.95fr] lg:px-10 lg:pb-28">
         <motion.div initial="hidden" animate="show" variants={reveal}>
           <p className="mb-6 text-xs font-bold tracking-[0.24em] text-coral">
-            JASA EDITIN DAN KETIKIN ALA GEN Z 
+            JASA EDITIN DAN KETIKIN ALA GEN Z
           </p>
           <h1 className="max-w-3xl font-serif text-[clamp(3.7rem,8vw,8rem)] font-bold leading-[.84] tracking-[-0.075em]">
             Whatever you&apos;re trying to{" "}
@@ -150,7 +152,7 @@ function Hero() {
         </motion.div>
       </div>
       <div className="border-y border-ink bg-coral py-3 text-center text-[10px] font-bold tracking-[.3em] text-cream">
-        KETIK · EDIT · DESIGN · CV · DOKUMEN · CUSTOM 
+        KETIK · EDIT · DESIGN · CV · DOKUMEN · CUSTOM
       </div>
     </section>
   );
@@ -246,9 +248,7 @@ function Portfolio() {
                     {item.category} · {item.platform}
                   </p>
 
-                  <h3 className="mt-1 font-serif text-3xl">
-                    {item.title}
-                  </h3>
+                  <h3 className="mt-1 font-serif text-3xl">{item.title}</h3>
 
                   <span className="mt-3 inline-flex items-center gap-2 text-[10px] font-bold tracking-widest">
                     {item.detailUrl ? "LIHAT KARYA" : "DETAIL SEGERA"}
@@ -258,9 +258,7 @@ function Portfolio() {
               </div>
 
               <div className="flex items-center justify-between px-4 py-3">
-                <span className="font-serif text-lg">
-                  {item.title}
-                </span>
+                <span className="font-serif text-lg">{item.title}</span>
 
                 <span className="text-[10px] font-bold tracking-widest text-ink/45">
                   {item.year}
@@ -475,6 +473,80 @@ function OrderGuide() {
   );
 }
 
+function Testimonials() {
+  const sliderTestimonials = [...testimonials, ...testimonials];
+
+  return (
+    <section className="overflow-hidden bg-beige px-5 py-24 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 flex flex-col justify-between gap-7 md:flex-row md:items-end">
+          <div>
+            <p className="mb-4 text-xs font-bold tracking-[.25em] text-coral">
+              05 / KATA MEREKA
+            </p>
+
+            <h2 className="font-serif text-6xl font-bold leading-[.9] tracking-[-.07em]">
+              BUKAN CUMA
+              <br />
+              <em className="font-normal">KATA KITA.</em>
+            </h2>
+          </div>
+
+          <p className="max-w-xs text-sm leading-6 text-ink/60">
+            Sedikit cerita dari mereka yang pernah ngerjain sesuatu bareng
+            WAYFINDX+.
+          </p>
+        </div>
+
+        <div className="overflow-hidden">
+          <motion.div
+            className="flex w-max gap-5"
+            animate={{ x: [0, "-50%"] }}
+            transition={{
+              duration: 50,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {sliderTestimonials.map((testimonial, index) => (
+              <article
+                key={`${testimonial.id}-${index}`}
+                className="flex min-h-[310px] w-[calc(100vw-40px)] shrink-0 flex-col justify-between border border-ink/15 bg-cream p-6 transition duration-300 hover:-translate-y-1 hover:border-coral sm:w-[340px] lg:w-[380px]"
+              >
+                <div>
+                  <div className="mb-8 flex items-center justify-between">
+                    <span className="font-serif text-3xl text-coral">“</span>
+
+                    <span className="border border-ink/15 px-3 py-1 text-[9px] font-bold tracking-[.18em]">
+                      {testimonial.service}
+                    </span>
+                  </div>
+
+                  <p className="font-serif text-xl leading-7 tracking-[-.02em]">
+                    {testimonial.message}
+                  </p>
+                </div>
+
+                <div className="mt-10 flex items-end justify-between border-t border-ink/15 pt-4">
+                  <div>
+                    <p className="text-sm font-bold">{testimonial.name}</p>
+
+                    <p className="mt-1 text-[10px] uppercase tracking-[.15em] text-ink/45">
+                      {testimonial.role}
+                    </p>
+                  </div>
+
+                  <span className="font-serif text-4xl text-coral">”</span>
+                </div>
+              </article>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+} 
+
 function FAQ() {
   const [active, setActive] = useState<number | null>(0);
   return (
@@ -482,7 +554,7 @@ function FAQ() {
       <div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
         <div>
           <p className="mb-4 text-xs font-bold tracking-[.25em] text-coral">
-            05 / MASIH PENASARAN?
+            06 / MASIH PENASARAN?
           </p>
           <h2 className="font-serif text-6xl font-bold tracking-[-.07em]">
             FREQUENTLY
@@ -533,6 +605,7 @@ export function WayfindxSite() {
       <Services />
       <Pricing />
       <OrderGuide />
+      <Testimonials />
       <FAQ />
       <section className="bg-coral px-5 py-24 text-center text-cream lg:px-10">
         <p className="mb-5 text-xs font-bold tracking-[.25em]">
@@ -560,7 +633,9 @@ export function WayfindxSite() {
             © 2026 WAYFINDX+. JASA JOKI ALA GEN Z.
           </p>
           <a
-            href={createWhatsappLink("Halo MinWayy! Mau tanya-tanya dulu boleh?")}
+            href={createWhatsappLink(
+              "Halo MinWayy! Mau tanya-tanya dulu boleh?",
+            )}
             className="text-xs font-bold tracking-widest text-coral"
           >
             WHATSAPP ↗

@@ -18,7 +18,8 @@ export const portfolio: PortfolioItem[] = [
     id: "editin-001",
     title: "DESIGN PPT TEMA FILM/VINTAGE",
     category: "EDITIN",
-    description: "Desain Slide Presentasi dengan pendekatan visual film vintage.",
+    description:
+      "Desain Slide Presentasi dengan pendekatan visual film vintage.",
     thumbnail: "/ppt-film.jpeg",
     detailUrl: "https://canva.link/t60ysbupb8opz0b",
     platform: "Canva",
@@ -119,7 +120,8 @@ export const portfolio: PortfolioItem[] = [
     description:
       "Mengetik dan merapikan artikel agar lebih rapi, nyaman dibaca, dan siap dipublikasikan.",
     thumbnail: "/ARTIKEL.png",
-    detailUrl: "https://docs.google.com/document/d/1ix1W8U1l1ImWsVwo_7RI1VOrFwsGyEf_HqEt2dB4_50/edit?usp=sharing",
+    detailUrl:
+      "https://docs.google.com/document/d/1ix1W8U1l1ImWsVwo_7RI1VOrFwsGyEf_HqEt2dB4_50/edit?usp=sharing",
     platform: "Word/Docs",
     tags: ["Typing", "Document"],
     featured: true,
@@ -129,8 +131,7 @@ export const portfolio: PortfolioItem[] = [
     id: "ketikin-003",
     title: "Rapiin Dokumen",
     category: "KETIKIN",
-    description:
-      "Ketik ulang dan formatting dokumen supaya lebih enak dibaca.",
+    description: "Ketik ulang dan formatting dokumen supaya lebih enak dibaca.",
     thumbnail: "/portfolio-docs.png",
     detailUrl: "https://drive.google.com/",
     platform: "Google Drive",
@@ -142,8 +143,7 @@ export const portfolio: PortfolioItem[] = [
     id: "ketikin-004",
     title: "Rapiin Dokumen",
     category: "KETIKIN",
-    description:
-      "Ketik ulang dan formatting dokumen supaya lebih enak dibaca.",
+    description: "Ketik ulang dan formatting dokumen supaya lebih enak dibaca.",
     thumbnail: "/portfolio-docs.png",
     detailUrl: "https://drive.google.com/",
     platform: "Google Drive",
@@ -155,8 +155,7 @@ export const portfolio: PortfolioItem[] = [
     id: "ketikin-005",
     title: "Rapiin Dokumen",
     category: "KETIKIN",
-    description:
-      "Ketik ulang dan formatting dokumen supaya lebih enak dibaca.",
+    description: "Ketik ulang dan formatting dokumen supaya lebih enak dibaca.",
     thumbnail: "/portfolio-docs.png",
     detailUrl: "https://drive.google.com/",
     platform: "Google Drive",
@@ -169,8 +168,7 @@ export const portfolio: PortfolioItem[] = [
     id: "iseng-001",
     title: "Eksperimen Bentuk",
     category: "ISENG",
-    description:
-      "Eksperimen visual kecil yang lahir dari rasa penasaran.",
+    description: "Eksperimen visual kecil yang lahir dari rasa penasaran.",
     thumbnail: "/portfolio-experiment.png",
     detailUrl: "https://www.behance.net/",
     platform: "Behance",
@@ -182,8 +180,7 @@ export const portfolio: PortfolioItem[] = [
     id: "iseng-002",
     title: "Eksperimen Bentuk",
     category: "ISENG",
-    description:
-      "Eksperimen visual kecil yang lahir dari rasa penasaran.",
+    description: "Eksperimen visual kecil yang lahir dari rasa penasaran.",
     thumbnail: "/portfolio-experiment.png",
     detailUrl: "https://www.behance.net/",
     platform: "Behance",
@@ -195,8 +192,7 @@ export const portfolio: PortfolioItem[] = [
     id: "iseng-003",
     title: "Eksperimen Bentuk",
     category: "ISENG",
-    description:
-      "Eksperimen visual kecil yang lahir dari rasa penasaran.",
+    description: "Eksperimen visual kecil yang lahir dari rasa penasaran.",
     thumbnail: "/portfolio-experiment.png",
     detailUrl: "https://www.behance.net/",
     platform: "Behance",
@@ -208,8 +204,7 @@ export const portfolio: PortfolioItem[] = [
     id: "iseng-004",
     title: "Eksperimen Bentuk",
     category: "ISENG",
-    description:
-      "Eksperimen visual kecil yang lahir dari rasa penasaran.",
+    description: "Eksperimen visual kecil yang lahir dari rasa penasaran.",
     thumbnail: "/portfolio-experiment.png",
     detailUrl: "https://www.behance.net/",
     platform: "Behance",
@@ -221,8 +216,7 @@ export const portfolio: PortfolioItem[] = [
     id: "iseng-005",
     title: "Eksperimen Bentuk",
     category: "ISENG",
-    description:
-      "Eksperimen visual kecil yang lahir dari rasa penasaran.",
+    description: "Eksperimen visual kecil yang lahir dari rasa penasaran.",
     thumbnail: "/portfolio-experiment.png",
     detailUrl: "https://www.behance.net/",
     platform: "Behance",
@@ -234,8 +228,7 @@ export const portfolio: PortfolioItem[] = [
     id: "iseng-006",
     title: "Eksperimen Bentuk",
     category: "ISENG",
-    description:
-      "Eksperimen visual kecil yang lahir dari rasa penasaran.",
+    description: "Eksperimen visual kecil yang lahir dari rasa penasaran.",
     thumbnail: "/portfolio-experiment.png",
     detailUrl: "https://www.behance.net/",
     platform: "Behance",
@@ -346,6 +339,65 @@ export const faqs = [
     "Bisa lewat WhatsApp, Google Drive, atau G From yang kita berikan nanti yaa.",
   ],
 ] as const;
+
+export type Testimonial = {
+  id: string;
+  name: string;
+  role: string;
+  message: string;
+  service: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    id: "testimonial-001",
+    name: "Alya",
+    role: "Pelajar",
+    message:
+      "Awalnya cuma butuh rapihin PPT, ternyata hasilnya jauh lebih niat dari yang gue bayangin. Tinggal kasih brief, langsung dibantu.",
+    service: "EDITIN",
+  },
+  {
+    id: "testimonial-002",
+    name: "Raka",
+    role: "Mahasiswa",
+    message:
+      "Fast response dan hasilnya rapi. Gue tinggal kirim bahan, nggak perlu jelasin terlalu ribet. Cocok banget buat yang lagi kejar deadline.",
+    service: "KETIKIN",
+  },
+  {
+    id: "testimonial-003",
+    name: "Naya",
+    role: "Pelajar",
+    message:
+      "Request gue agak custom tapi MinWay masih mau diskusiin sampai ketemu cara yang paling pas. Hasil akhirnya juga sesuai ekspektasi.",
+    service: "CUSTOM",
+  },
+  {
+    id: "testimonial-004",
+    name: "Dinda",
+    role: "Mahasiswa",
+    message:
+      "Ngebantu banget pas tugas lagi numpuk. Hasilnya rapi, komunikasinya enak, dan prosesnya juga nggak ribet.",
+    service: "KETIKIN",
+  },
+  {
+    id: "testimonial-005",
+    name: "Fajar",
+    role: "Pelajar",
+    message:
+      "Desain PPT-nya jadi lebih menarik dan enak dilihat. Tinggal kirim materi, terus dibantu sampai tampilannya sesuai yang gue mau.",
+    service: "EDITIN",
+  },
+  {
+    id: "testimonial-006",
+    name: "Salsa",
+    role: "Mahasiswa",
+    message:
+      "Suka karena bisa diskusi dulu soal kebutuhan dan konsepnya. Hasil akhirnya lebih terarah dan sesuai brief yang gue kasih.",
+    service: "CUSTOM",
+  },
+];
 
 export const whatsappUrl = "https://wa.me/6285111352277";
 
